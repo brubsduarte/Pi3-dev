@@ -98,7 +98,7 @@ public class ClienteProdutoSelecionadoServlet extends HttpServlet {
     Aluguel a = new Aluguel();
 
     try {
-      a.setDataInicial(formato.parse(request.getParameter("date")));
+      a.setDataInicial(formato.parse(request.getParameter("dateRetirada")));
     } catch (ParseException ex) {
       Logger.getLogger(ClienteProdutoSelecionadoServlet.class.getName()).log(Level.SEVERE, null, ex);
     }

@@ -40,8 +40,8 @@ public class DevolucaoServlet extends HttpServlet {
     ArrayList<Cliente> clientes = clienteDAO.listarAlugando(u.getIdFilial());
     
       SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
-      String date = formato.format(new Date());
-      request.setAttribute("date", date);
+      String dateDevolucao = formato.format(new Date());
+      request.setAttribute("hoje", dateDevolucao);
     
     request.setAttribute("clientes", clientes);
     request.getRequestDispatcher("/devolucao.jsp").forward(request, response);

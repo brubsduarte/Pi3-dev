@@ -43,10 +43,6 @@ public class DevolucaoDevolverServlet extends HttpServlet {
       return;
     }
     
-    SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
-    String date = formato.format(new Date());
-    request.setAttribute("date", date);
-    
     String idClienteTela = request.getParameter("idClienteSelecionado");
 
     if (!idClienteTela.equals("")) {
@@ -59,11 +55,11 @@ public class DevolucaoDevolverServlet extends HttpServlet {
       DateTimeFormatter formatador = DateTimeFormatter.ofPattern("dd/MM/yyyy");
       long quantidadeDias = DAYS.between(
               LocalDate.parse(request.getParameter("dataRetirada"), formatador), 
-              LocalDate.parse(request.getParameter("dataDevolucao"), formatador));
+              LocalDate.parse(request.getParameter("dateDevolucao"), formatador));
       
       double total = ((double)quantidadeDias + 1) * precoDiaria;
       aluguel.setPrecoTotal(total);
-      aluguel.setDataFinal(java.sql.Date.valueOf(LocalDate.parse(request.getParameter("dataDevolucao"), formatador)));
+      aluguel.setDataFinal(java.sql.Date.valueOf(LocalDate.parse(request.getParameter("dateDevolucao"), formatador)));
       
       boolean sucesso = aluguelDAO.devolver(aluguel);
       request.setAttribute("sucesso", sucesso);

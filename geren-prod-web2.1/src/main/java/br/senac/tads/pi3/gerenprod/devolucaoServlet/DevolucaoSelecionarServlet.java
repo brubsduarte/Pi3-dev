@@ -64,7 +64,7 @@ public class DevolucaoSelecionarServlet extends HttpServlet {
       
       SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
       String date = formato.format(new Date());
-      request.setAttribute("date", date);
+      request.setAttribute("hoje", date);
       
       request.setAttribute("dataRetirada", df.format(aluguel.getDataInicial()));
     }
@@ -84,9 +84,13 @@ public class DevolucaoSelecionarServlet extends HttpServlet {
       response.sendRedirect(request.getContextPath() + "/");
       return;
     }
+    
+    SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
+    String date = formato.format(new Date());
+    request.setAttribute("hoje", date);
 
     String idClienteTela = request.getParameter("idClienteSelecionado");
-    String dataSelecionada = request.getParameter("date");
+    String dataSelecionada = request.getParameter("dateDevolucao");
 
     if (!idClienteTela.equals("") && !dataSelecionada.equals("")) {
       int idCliente = Integer.parseInt(idClienteTela);
@@ -104,9 +108,9 @@ public class DevolucaoSelecionarServlet extends HttpServlet {
       DateTimeFormatter formatador = DateTimeFormatter.ofPattern("dd/MM/yyyy");
       long quantidadeDias = DAYS.between(
               LocalDate.parse(request.getParameter("dataRetirada"), formatador), 
-              LocalDate.parse(request.getParameter("date"), formatador));
+              LocalDate.parse(request.getParameter("dateDevolucao"), formatador));
 
-      request.setAttribute("date", request.getParameter("date"));
+      request.setAttribute("dateDevolucao", request.getParameter("dateDevolucao"));
       
       double total = ((double)quantidadeDias + 1) * precoDiaria;
       

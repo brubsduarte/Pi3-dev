@@ -106,8 +106,8 @@
               </div>
             </div>
             <div class="form-group col-6"> <!-- Date input -->
-              <label class="control-label" for="date">Data de devolução</label>
-              <input class="form-control" id="date" name="date" value="${date}" placeholder="dd/mm/yyyy" type="text"/>
+              <label class="control-label" for="dateDevolucao">Data de devolução</label>
+              <input class="form-control" id="dateDevolucao" name="dateDevolucao" value="${hoje}" type="text" readonly>
               <input name="idAluguel" value="${aluguel.idAluguel}" type="hidden">
               <input name="idProdutoSelecionado" value="${produtoSelecionado.idProduto}" type="hidden">
               <input name="precoDiaria" value="${produtoSelecionado.precoDiaria}" type="hidden">
@@ -156,7 +156,7 @@
           <h1 class="display-4 mb-5">${valorTotal}</h1>
           
           <input name="dataRetirada" value="${dataRetirada}" type="hidden">
-          <input name="dataDevolucao" value="${date}" type="hidden">
+          <input name="dateDevolucao" value="${dateDevolucao}" type="hidden">
           <input name="idClienteSelecionado" value="${clienteSelecionado.idCliente}" type="hidden">
           <input name="precoDiaria" value="${produtoSelecionado.precoDiaria}" type="hidden">
           

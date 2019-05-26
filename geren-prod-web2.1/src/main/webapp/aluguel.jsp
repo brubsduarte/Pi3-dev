@@ -170,8 +170,8 @@
           
           <div class="row">
             <div class="form-group col-6"> <!-- Date input -->
-              <label class="control-label" for="date">Data de retirada</label>
-              <input class="form-control" id="date" name="date" value="${hoje}" placeholder="dd/mm/yyyy" type="text" readonly="true">
+              <label class="control-label" for="dateRetirada">Data de retirada</label>
+              <input class="form-control" id="dateRetirada" name="dateRetirada" value="${hoje}" placeholder="dd/mm/yyyy" type="text" readonly>
               <input name="idProdutoSelecionado" value="${produtoSelecionado.idProduto}" type="hidden">
               <input name="idClienteSelecionado" value="${clienteSelecionado.idCliente}" type="hidden">
             </div>
