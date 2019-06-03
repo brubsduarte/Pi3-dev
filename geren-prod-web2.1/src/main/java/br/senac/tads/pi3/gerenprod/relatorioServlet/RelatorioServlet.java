@@ -14,6 +14,7 @@ import br.senac.tads.pi3.gerenprod.model.Relatorio;
 import br.senac.tads.pi3.gerenprod.model.Usuario;
 import java.io.IOException;
 import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.logging.Level;
@@ -26,7 +27,7 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author Bruna
+ * @author AlexandreVinii
  */
 @WebServlet(name = "RelatorioServlet", urlPatterns = {"/relatorio"})
 public class RelatorioServlet extends HttpServlet {
@@ -43,13 +44,13 @@ public class RelatorioServlet extends HttpServlet {
             response.sendRedirect(request.getContextPath() + "/");
             return;
         }
-        
-        if(u.isGlobal()) {
-          request.setAttribute("isGlobal", true);
+
+        if (u.isGlobal()) {
+            request.setAttribute("isGlobal", true);
         } else {
-          request.setAttribute("isGlobal", false);
+            request.setAttribute("isGlobal", false);
         }
-        
+
         ArrayList<Relatorio> relatorios = RelatorioDAO.listar(u.getIdFilial());
         ArrayList<Administracao> filiais = filialDAO.listar(0);
 
@@ -68,19 +69,33 @@ public class RelatorioServlet extends HttpServlet {
             response.sendRedirect(request.getContextPath() + "/");
             return;
         }
+        SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd");
+        String hoje = formato.format(new Date());
+
+        String dataInicio = request.getParameter("StartTime");
+        String dataFinal = request.getParameter("EndTime");
+
+        if (dataFinal.equals("") && dataInicio.equals("")) {
+            dataInicio = hoje;
+            dataFinal = hoje;
+        } else {
+            dataInicio = request.getParameter("StartTime");
+            dataFinal = request.getParameter("EndTime");
+        }
+
         try {
-            Date StartTime = Auxiliar.InputDateToUtilDate(request.getParameter("StartTime"));
-            Date EndTime = Auxiliar.InputDateToUtilDate(request.getParameter("EndTime"));
+            Date StartTime = Auxiliar.InputDateToUtilDate(dataInicio);
+            Date EndTime = Auxiliar.InputDateToUtilDate(dataFinal);
 
             int idFilial = u.getIdFilial();
-            
-            if(u.isGlobal()) {
-              request.setAttribute("isGlobal", true);
-              idFilial = Integer.parseInt(request.getParameter("idFilial"));
+
+            if (u.isGlobal()) {
+                request.setAttribute("isGlobal", true);
+                idFilial = Integer.parseInt(request.getParameter("idFilial"));
             } else {
-              request.setAttribute("isGlobal", false);
+                request.setAttribute("isGlobal", false);
             }
-            
+
             ArrayList<Relatorio> relatorios = RelatorioDAO.getAluguelByDates(StartTime, EndTime, idFilial);
             request.setAttribute("relatorios", relatorios);
 
