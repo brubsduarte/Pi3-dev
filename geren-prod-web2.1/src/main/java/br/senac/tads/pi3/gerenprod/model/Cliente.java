@@ -7,7 +7,7 @@ package br.senac.tads.pi3.gerenprod.model;
 
 /**
  *
- * @author Gustavo
+ * @author Felippe
  */
 public class Cliente extends Object {
 

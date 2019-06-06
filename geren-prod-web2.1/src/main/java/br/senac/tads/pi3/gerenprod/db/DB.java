@@ -15,6 +15,7 @@ import java.sql.Statement;
  *
  * @author Bruna
  */
+
 public class DB {
     private static final String DRIVER = "com.mysql.jdbc.Driver";
     private static final String SERVIDOR = "jdbc:mysql://localhost:3306/"; //Mudar apenas isso
@@ -42,7 +43,7 @@ public class DB {
     }
     
     /**
-     * Finaliza a altera��o do banco de dados.
+     * Finaliza a alteração do banco de dados.
      */
     public void commit() {
         try {
@@ -53,7 +54,7 @@ public class DB {
     }
     
     /**
-     * Desfaz a altera��o do banco de dados.
+     * Desfaz a alteração do banco de dados.
      */
     public void rollback() {
         try {
@@ -64,7 +65,7 @@ public class DB {
     }
     
     /**
-     * Fecha a conex�o com o banco de dados.
+     * Fecha a conexão com o banco de dados.
      */
     public void close() {
         try {
@@ -75,9 +76,9 @@ public class DB {
     }
 
     /**
-     * Executa as altera��es (inserir, excluir e atualizar) no banco de dados.
+     * Executa as alterações (inserir, excluir e atualizar) no banco de dados.
      *
-     * @param sql c�digo a ser executado no banco de dados.
+     * @param sql código a ser executado no banco de dados.
      * @return TRUE se executar com sucesso e FALSE se houver alguma falha.
      */
     public boolean executarAlteracao(String sql) {

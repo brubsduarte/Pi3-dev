@@ -1,5 +1,9 @@
 package br.senac.tads.pi3.gerenprod.model;
 
+/**
+ * 
+ * @author Bruna
+ */
 public class Produto extends Object {
     
     private int idProduto, idFilial;
