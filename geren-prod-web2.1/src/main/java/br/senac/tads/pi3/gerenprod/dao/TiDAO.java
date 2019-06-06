@@ -18,6 +18,12 @@ import java.util.Date;
  */
 public class TiDAO implements CrudInterface<Ti> {
 
+  /**
+   * Lista usuario.
+   * 
+   * @param idFilial
+   * @return 
+   */
   @Override
   public ArrayList<Ti> listar(int idFilial) {
     DB db = new DB(true);
@@ -50,6 +56,12 @@ public class TiDAO implements CrudInterface<Ti> {
 
   }
 
+  /**
+   * Mostra usuario.
+   * 
+   * @param idUsuario
+   * @return 
+   */
   @Override
   public Ti mostrar(int idUsuario) {
     DB db = new DB(true);
@@ -73,6 +85,12 @@ public class TiDAO implements CrudInterface<Ti> {
     }
   }
 
+  /**
+   * Edita dados do usuario.
+   * 
+   * @param t
+   * @return 
+   */
   @Override
   public boolean editar(Ti t) {
    DB db = new DB(false);
@@ -109,6 +127,12 @@ public class TiDAO implements CrudInterface<Ti> {
     }
   }
 
+  /**
+   * Salva dados do usuário. 
+   * 
+   * @param t
+   * @return 
+   */
   @Override
   public boolean salvar(Ti t) {
     DB db = new DB(false);
@@ -142,6 +166,12 @@ public class TiDAO implements CrudInterface<Ti> {
     }
   }
 
+  /**
+   * Desativa usuário. 
+   * 
+   * @param idUsuario
+   * @return 
+   */
   @Override
   public boolean desativar(int idUsuario) {
     DB db = new DB(false);

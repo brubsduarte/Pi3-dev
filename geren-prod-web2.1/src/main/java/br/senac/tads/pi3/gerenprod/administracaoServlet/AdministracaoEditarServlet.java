@@ -27,6 +27,14 @@ public class AdministracaoEditarServlet extends HttpServlet {
 
   private final CrudInterface AdministracaoDAO = new AdministracaoDAO();
   
+  /**
+   * Mostra a filial selecionada. 
+   * 
+   * @param request
+   * @param response
+   * @throws ServletException
+   * @throws IOException 
+   */
   @Override
   protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     
@@ -51,6 +59,13 @@ public class AdministracaoEditarServlet extends HttpServlet {
     request.getRequestDispatcher("/administracao.jsp").forward(request, response);
   }
   
+  /**
+   * Edita os dados cadastrados da filial selecionada. 
+   * @param request
+   * @param response
+   * @throws ServletException
+   * @throws IOException 
+   */
   @Override
   protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     

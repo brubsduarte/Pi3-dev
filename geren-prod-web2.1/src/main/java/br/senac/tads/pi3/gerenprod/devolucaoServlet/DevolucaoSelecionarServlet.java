@@ -35,6 +35,14 @@ public class DevolucaoSelecionarServlet extends HttpServlet {
   private final ClienteDAO clienteDAO = new ClienteDAO();
   private final AluguelDAO aluguelDAO = new AluguelDAO();
   
+  /**
+   * Metodo que mostra o aluguel selecionado para a devolução.
+   * 
+   * @param request
+   * @param response
+   * @throws ServletException
+   * @throws IOException 
+   */
   @Override
   protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
@@ -75,6 +83,14 @@ public class DevolucaoSelecionarServlet extends HttpServlet {
     request.getRequestDispatcher("/devolucao.jsp").forward(request, response);
   }
   
+  /**
+   * Metodo que calcula o valor do aluguel.
+   * 
+   * @param request
+   * @param response
+   * @throws ServletException
+   * @throws IOException 
+   */
   @Override
   protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 

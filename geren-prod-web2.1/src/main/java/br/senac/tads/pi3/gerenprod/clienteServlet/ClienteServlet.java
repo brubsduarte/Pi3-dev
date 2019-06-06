@@ -26,6 +26,14 @@ public class ClienteServlet extends HttpServlet {
 
   private final CrudInterface clienteDAO = new ClienteDAO();
   
+  /**
+   * Lista o cliente na tela de cliente.
+   * 
+   * @param request
+   * @param response
+   * @throws ServletException
+   * @throws IOException 
+   */
   @Override
   protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
@@ -42,6 +50,14 @@ public class ClienteServlet extends HttpServlet {
     request.getRequestDispatcher("/cliente.jsp").forward(request, response);
   }
 
+  /**
+   * Salva o cliente no banco de dados. 
+   * 
+   * @param request
+   * @param response
+   * @throws ServletException
+   * @throws IOException 
+   */
   @Override
   protected void doPost(HttpServletRequest request,  HttpServletResponse response) throws ServletException, IOException {
 

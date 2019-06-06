@@ -20,6 +20,14 @@ public class ClienteDesativarServlet extends HttpServlet {
 
   private final CrudInterface clienteDAO = new ClienteDAO();
   
+  /**
+   * Desativa um cliente. 
+   * 
+   * @param request
+   * @param response
+   * @throws ServletException
+   * @throws IOException 
+   */
   @Override
   protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     

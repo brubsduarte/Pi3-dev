@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.Date;
 
 /**
- *
+ * Interface com os métodos de listar, mostrar, editar, salvar e desativar. 
  * @author Bruna
  * @param <O>
  */

@@ -11,12 +11,10 @@ import br.senac.tads.pi3.gerenprod.model.Aluguel;
 import br.senac.tads.pi3.gerenprod.model.Cliente;
 import br.senac.tads.pi3.gerenprod.model.Usuario;
 import java.io.IOException;
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import static java.time.temporal.ChronoUnit.DAYS;
 import java.util.ArrayList;
-import java.util.Date;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -33,6 +31,14 @@ public class DevolucaoDevolverServlet extends HttpServlet {
   private final ClienteDAO clienteDAO = new ClienteDAO();
   private final AluguelDAO aluguelDAO = new AluguelDAO();
   
+  /***
+   * Metodo que realiza a devolução.
+   * 
+   * @param request
+   * @param response
+   * @throws ServletException
+   * @throws IOException 
+   */
   @Override
   protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 

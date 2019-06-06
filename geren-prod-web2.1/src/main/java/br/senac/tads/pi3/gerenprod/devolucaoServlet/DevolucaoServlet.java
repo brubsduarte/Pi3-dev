@@ -27,6 +27,14 @@ public class DevolucaoServlet extends HttpServlet {
 
   private final ClienteDAO clienteDAO = new ClienteDAO();
   
+  /**
+   * Metodo lista os clientes que estão alugando.
+   * 
+   * @param request
+   * @param response
+   * @throws ServletException
+   * @throws IOException 
+   */
   @Override
   protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 

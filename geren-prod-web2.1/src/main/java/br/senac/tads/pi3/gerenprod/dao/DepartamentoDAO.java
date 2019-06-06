@@ -19,6 +19,12 @@ import java.util.Date;
  */
 public class DepartamentoDAO implements CrudInterface<Departamento> {
 
+  /**
+   * Lista o departamento. 
+   * 
+   * @param idFilial
+   * @return 
+   */
   @Override
   public ArrayList<Departamento> listar(int idFilial) {
     DB db = new DB(true);

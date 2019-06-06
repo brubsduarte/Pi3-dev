@@ -32,6 +32,14 @@ public class TiEditarServlet extends HttpServlet {
   private final CrudInterface departamentoDAO = new DepartamentoDAO();
   private final CrudInterface filialDAO = new AdministracaoDAO();
 
+  /**
+   * Lista os usuraios na tela de TI.
+   * 
+   * @param request
+   * @param response
+   * @throws ServletException
+   * @throws IOException 
+   */
   @Override
   protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
@@ -60,6 +68,14 @@ public class TiEditarServlet extends HttpServlet {
     request.getRequestDispatcher("/ti.jsp").forward(request, response);
   }
   
+  /**
+   * Edita o dado do usuário na tela de TI. 
+   * 
+   * @param request
+   * @param response
+   * @throws ServletException
+   * @throws IOException 
+   */
   @Override
   protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     

@@ -20,6 +20,14 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet(name = "SairServlet", urlPatterns = {"/sair"})
 public class SairServlet extends HttpServlet {
 
+  /**
+   * Método de logout.
+   * 
+   * @param request
+   * @param response
+   * @throws ServletException
+   * @throws IOException 
+   */
   @Override
   protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 

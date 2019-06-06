@@ -26,6 +26,14 @@ public class ProdutoEditarServlet extends HttpServlet {
 
   private final CrudInterface produtoDAO = new ProdutoDAO();
   
+  /**
+   * Metodo que traz o produto selecionado para editar.
+   * 
+   * @param request
+   * @param response
+   * @throws ServletException
+   * @throws IOException 
+   */
   @Override
   protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     
@@ -50,6 +58,14 @@ public class ProdutoEditarServlet extends HttpServlet {
     request.getRequestDispatcher("/produto.jsp").forward(request, response);
   }
   
+  /***
+   * Metodo que salva as informações editadas. 
+   * 
+   * @param request
+   * @param response
+   * @throws ServletException
+   * @throws IOException 
+   */
   @Override
   protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     

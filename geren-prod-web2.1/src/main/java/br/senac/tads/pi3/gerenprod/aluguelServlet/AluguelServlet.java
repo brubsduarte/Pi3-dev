@@ -30,6 +30,14 @@ public class AluguelServlet extends HttpServlet {
   private final ProdutoDAO produtoDAO = new ProdutoDAO();
   private final ClienteDAO clienteDAO = new ClienteDAO();
 
+  /***
+   * Metodo lista os produtos e clientes que não alugaram.
+   * 
+   * @param request
+   * @param response
+   * @throws ServletException
+   * @throws IOException 
+   */
   @Override
   protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 

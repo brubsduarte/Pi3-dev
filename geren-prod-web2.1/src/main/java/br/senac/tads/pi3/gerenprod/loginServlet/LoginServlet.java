@@ -24,6 +24,14 @@ public class LoginServlet extends HttpServlet {
 
   private final UsuarioDAO usuarioDAO = new UsuarioDAO();
   
+  /**
+   * Mostra a tela de login.
+   * 
+   * @param request
+   * @param response
+   * @throws ServletException
+   * @throws IOException 
+   */
   @Override
   protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
@@ -37,6 +45,13 @@ public class LoginServlet extends HttpServlet {
     request.getRequestDispatcher("/login.jsp").forward(request, response);
   }
   
+  /**
+   * Realiza o login.
+   * @param request
+   * @param response
+   * @throws ServletException
+   * @throws IOException 
+   */
   @Override
   protected void doPost(HttpServletRequest request,  HttpServletResponse response) throws ServletException, IOException {
 

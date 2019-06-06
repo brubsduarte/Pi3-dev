@@ -19,6 +19,12 @@ import java.util.Date;
  */
 public class RelatorioDAO implements CrudInterface<Relatorio> {
 
+  /**
+   * Lista o aluguel.
+   * 
+   * @param idFilial
+   * @return 
+   */
     @Override
     public ArrayList<Relatorio> listar(int idFilial) {
         DB db = new DB(true);
@@ -61,6 +67,14 @@ public class RelatorioDAO implements CrudInterface<Relatorio> {
         }
     }
     
+    /**
+     * Busca informação de aluguel de acordo com a data selecionada. 
+     * 
+     * @param de
+     * @param para
+     * @param idFilial
+     * @return 
+     */
     @Override
     public ArrayList<Relatorio> getAluguelByDates(Date de, Date para, int idFilial) {
         DB db = new DB(true);

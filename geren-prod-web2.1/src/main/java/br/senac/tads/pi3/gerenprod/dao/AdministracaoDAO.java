@@ -19,6 +19,12 @@ import java.util.Date;
  */
 public class AdministracaoDAO implements CrudInterface<Administracao>  {
 
+  /**
+   * Lista filial.
+   * 
+   * @param idFilial
+   * @return 
+   */
     @Override
     public ArrayList<Administracao> listar(int idFilial) {
     DB db = new DB(true);
@@ -46,6 +52,12 @@ public class AdministracaoDAO implements CrudInterface<Administracao>  {
     }
     }
 
+    /**
+     * Mostra filiais. 
+     * 
+     * @param idFilial
+     * @return 
+     */
     @Override
     public Administracao mostrar(int idFilial) {
          DB db = new DB(true);
@@ -71,6 +83,12 @@ public class AdministracaoDAO implements CrudInterface<Administracao>  {
     }
     }
 
+    /**
+     * Edita dados da filial. 
+     * 
+     * @param p
+     * @return 
+     */
     @Override
     public boolean editar(Administracao p) {
         DB db = new DB(false);
@@ -102,6 +120,13 @@ public class AdministracaoDAO implements CrudInterface<Administracao>  {
     }
     }
 
+    
+    /**
+     * Salva filial. 
+     * 
+     * @param p
+     * @return 
+     */
     @Override
     public boolean salvar(Administracao p) {
         DB db = new DB(false);
@@ -135,6 +160,12 @@ public class AdministracaoDAO implements CrudInterface<Administracao>  {
     }
   }
 
+    /**
+     * Desativa filial.
+     * 
+     * @param filialID
+     * @return 
+     */
     @Override
     public boolean desativar(int filialID) {
         DB db = new DB(false);

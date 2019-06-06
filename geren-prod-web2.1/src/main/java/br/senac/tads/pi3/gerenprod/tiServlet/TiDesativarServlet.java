@@ -33,6 +33,14 @@ public class TiDesativarServlet extends HttpServlet {
   private final CrudInterface departamentoDAO = new DepartamentoDAO();
   private final CrudInterface filialDAO = new AdministracaoDAO();
  
+  /**
+   * Desativa um usuário na tela de TI. 
+   * 
+   * @param request
+   * @param response
+   * @throws ServletException
+   * @throws IOException 
+   */
  @Override
   protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     

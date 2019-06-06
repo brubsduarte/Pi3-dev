@@ -23,6 +23,12 @@ import java.util.Date;
  */
 public class AluguelDAO implements CrudInterface<Aluguel> {
 
+  /**
+   * Mostra os alugueis.
+   * 
+   * @param ID
+   * @return 
+   */
   @Override
   public Aluguel mostrar(int ID) {
     DB db = new DB(true);
@@ -78,6 +84,12 @@ public class AluguelDAO implements CrudInterface<Aluguel> {
     throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
   }
 
+  /**
+   * Salva um aluguel.
+   * 
+   * @param a
+   * @return 
+   */
   @Override
   public boolean salvar(Aluguel a) {
     DB db = new DB(false);
@@ -130,6 +142,11 @@ public class AluguelDAO implements CrudInterface<Aluguel> {
     }
   }
 
+  /**
+   * Devolução do aluguel.
+   * @param a
+   * @return 
+   */
   public boolean devolver(Aluguel a) {
     DB db = new DB(false);
 

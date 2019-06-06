@@ -21,6 +21,14 @@ public class ClienteEditarServlet extends HttpServlet {
 
   private final CrudInterface clienteDAO = new ClienteDAO();
 
+  /**
+   * Lista o cliente selecionado para editar os dados de cadastro. 
+   * 
+   * @param request
+   * @param response
+   * @throws ServletException
+   * @throws IOException 
+   */
   @Override
   protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
@@ -45,6 +53,14 @@ public class ClienteEditarServlet extends HttpServlet {
     request.getRequestDispatcher("/cliente.jsp").forward(request, response);
   }
 
+  /**
+   * Edita o dado do cliente selecionado. 
+   * 
+   * @param request
+   * @param response
+   * @throws ServletException
+   * @throws IOException 
+   */
   @Override
   protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 

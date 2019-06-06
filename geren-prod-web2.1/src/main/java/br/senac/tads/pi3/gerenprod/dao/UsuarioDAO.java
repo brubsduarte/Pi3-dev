@@ -16,6 +16,12 @@ import java.sql.SQLException;
  */
 public class UsuarioDAO {
 
+  /**
+   * Faz o login do usuário. 
+   * 
+   * @param usuario
+   * @return 
+   */
   public Usuario login (Usuario usuario) {
     DB db = new DB(true);
     try {

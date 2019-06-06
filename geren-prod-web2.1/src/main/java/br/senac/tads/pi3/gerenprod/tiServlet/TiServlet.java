@@ -32,7 +32,15 @@ public class TiServlet extends HttpServlet {
 private final CrudInterface tiDAO = new TiDAO();
 private final CrudInterface departamentoDAO = new DepartamentoDAO();
 private final CrudInterface filialDAO = new AdministracaoDAO();
-  
+ 
+/**
+ * Lista os departamento, usuário e a filial na tela de TI.
+ * 
+ * @param request
+ * @param response
+ * @throws ServletException
+ * @throws IOException 
+ */
 @Override
   protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
@@ -52,7 +60,15 @@ private final CrudInterface filialDAO = new AdministracaoDAO();
     request.setAttribute("filiais", filiais);
     request.getRequestDispatcher("/ti.jsp").forward(request, response);
   }
-  
+ 
+  /**
+   * Salva o cadastro de usuáio na tela de TI. 
+   * 
+   * @param request
+   * @param response
+   * @throws ServletException
+   * @throws IOException 
+   */
 @Override
   protected void doPost(HttpServletRequest request,  HttpServletResponse response) throws ServletException, IOException {
       

@@ -35,6 +35,14 @@ public class RelatorioServlet extends HttpServlet {
     private final CrudInterface RelatorioDAO = new RelatorioDAO();
     private final CrudInterface filialDAO = new AdministracaoDAO();
 
+    /***
+     * Método usado para listar todos os registros de aluguel na tela de relatório.
+     * 
+     * @param request
+     * @param response
+     * @throws ServletException
+     * @throws IOException 
+     */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
@@ -59,6 +67,14 @@ public class RelatorioServlet extends HttpServlet {
         request.getRequestDispatcher("/relatorio.jsp").forward(request, response);
     }
 
+    /***
+     * Método usado para filtrar todos os registros de aluguel na tela de relatório.
+     * 
+     * @param request
+     * @param response
+     * @throws ServletException
+     * @throws IOException 
+     */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -69,19 +85,9 @@ public class RelatorioServlet extends HttpServlet {
             response.sendRedirect(request.getContextPath() + "/");
             return;
         }
-        SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd");
-        String hoje = formato.format(new Date());
 
         String dataInicio = request.getParameter("StartTime");
         String dataFinal = request.getParameter("EndTime");
-
-        if (dataFinal.equals("") && dataInicio.equals("")) {
-            dataInicio = hoje;
-            dataFinal = hoje;
-        } else {
-            dataInicio = request.getParameter("StartTime");
-            dataFinal = request.getParameter("EndTime");
-        }
 
         try {
             Date StartTime = Auxiliar.InputDateToUtilDate(dataInicio);
@@ -104,7 +110,19 @@ public class RelatorioServlet extends HttpServlet {
             request.getRequestDispatcher("/relatorio.jsp").forward(request, response);
 
         } catch (ParseException ex) {
-            Logger.getLogger(RelatorioServlet.class.getName()).log(Level.SEVERE, null, ex);
+          
+            if (u.isGlobal()) {
+                request.setAttribute("isGlobal", true);
+            } else {
+                request.setAttribute("isGlobal", false);
+            }
+
+            ArrayList<Relatorio> relatorios = RelatorioDAO.listar(u.getIdFilial());
+            ArrayList<Administracao> filiais = filialDAO.listar(0);
+
+            request.setAttribute("relatorios", relatorios);
+            request.setAttribute("filiais", filiais);
+            request.getRequestDispatcher("/relatorio.jsp").forward(request, response);
         }
     }
 }

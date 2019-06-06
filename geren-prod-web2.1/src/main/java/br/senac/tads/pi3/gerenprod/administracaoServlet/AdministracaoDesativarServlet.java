@@ -29,6 +29,14 @@ public class AdministracaoDesativarServlet extends HttpServlet {
 
   private final CrudInterface administracaoDAO = new AdministracaoDAO();
   
+  /**
+   * Desativa a filial. 
+   * 
+   * @param request
+   * @param response
+   * @throws ServletException
+   * @throws IOException 
+   */
   @Override
   protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     

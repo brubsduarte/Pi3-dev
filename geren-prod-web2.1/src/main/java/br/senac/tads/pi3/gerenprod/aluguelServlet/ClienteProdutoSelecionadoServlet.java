@@ -36,7 +36,14 @@ public class ClienteProdutoSelecionadoServlet extends HttpServlet {
   private final ProdutoDAO produtoDAO = new ProdutoDAO();
   private final ClienteDAO clienteDAO = new ClienteDAO();
   private final CrudInterface aluguelDAO = new AluguelDAO();
-
+/**
+ * Metodo mostra o produto e clientes selecionados para alugar o veiculo.
+ * 
+ * @param request
+ * @param response
+ * @throws ServletException
+ * @throws IOException 
+ */
   @Override
   protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
@@ -81,6 +88,14 @@ public class ClienteProdutoSelecionadoServlet extends HttpServlet {
     request.getRequestDispatcher("/aluguel.jsp").forward(request, response);
   }
 
+  /**
+   * Metodo salva o aluguel no banco de dados.
+   * 
+   * @param request
+   * @param response
+   * @throws ServletException
+   * @throws IOException 
+   */
   @Override
   protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 

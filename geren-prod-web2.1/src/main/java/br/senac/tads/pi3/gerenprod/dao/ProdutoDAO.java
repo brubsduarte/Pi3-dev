@@ -19,6 +19,12 @@ import java.util.Date;
  */
 public class ProdutoDAO implements CrudInterface<Produto> {
 
+  /**
+   * Lista os produtos.
+   * 
+   * @param idFilial
+   * @return 
+   */
   @Override
   public ArrayList<Produto> listar(int idFilial) {
     DB db = new DB(true);
@@ -48,6 +54,11 @@ public class ProdutoDAO implements CrudInterface<Produto> {
     }
   }
   
+  /**
+   * Lista os produtos alugados.
+   * @param idFilial
+   * @return 
+   */
   public ArrayList<Produto> listarAlugando(int idFilial) {
     DB db = new DB(true);
     try {
@@ -76,6 +87,11 @@ public class ProdutoDAO implements CrudInterface<Produto> {
     }
   }
   
+  /**
+   * Lista os produtos não alugados.
+   * @param idFilial
+   * @return 
+   */
   public ArrayList<Produto> listarNaoAlugado(int idFilial) {
     DB db = new DB(true);
     try {
@@ -104,6 +120,12 @@ public class ProdutoDAO implements CrudInterface<Produto> {
     }
   }
   
+  /**
+   * Mostra os produtos.
+   * 
+   * @param idProduto
+   * @return 
+   */
   @Override
   public Produto mostrar(int idProduto) {
     DB db = new DB(true);
@@ -131,6 +153,11 @@ public class ProdutoDAO implements CrudInterface<Produto> {
     }
   }
 
+  /**
+   * Edita o produto. 
+   * @param p
+   * @return 
+   */
   @Override
   public boolean editar(Produto p) {
     DB db = new DB(false);
@@ -163,6 +190,11 @@ public class ProdutoDAO implements CrudInterface<Produto> {
     }
   }
 
+  /**
+   * Salva os produtos.
+   * @param p
+   * @return 
+   */
   @Override
   public boolean salvar(Produto p) {
     DB db = new DB(false);
@@ -199,6 +231,12 @@ public class ProdutoDAO implements CrudInterface<Produto> {
     }
   }
 
+  /**
+   * Desativa o produto.
+   * 
+   * @param produtoID
+   * @return 
+   */
   @Override
   public boolean desativar(int produtoID) {
     DB db = new DB(false);

@@ -26,6 +26,14 @@ public class AdministracaoServlet extends HttpServlet {
 
   private final CrudInterface administracaoDAO = new AdministracaoDAO();
   
+  /**
+   * Lista as filiais na tela de administração. 
+   * 
+   * @param request
+   * @param response
+   * @throws ServletException
+   * @throws IOException 
+   */
   @Override
   protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
@@ -42,6 +50,14 @@ public class AdministracaoServlet extends HttpServlet {
     request.getRequestDispatcher("/administracao.jsp").forward(request, response);
   }
 
+  /**
+   * Salva uma filial no banco de dados. 
+   * 
+   * @param request
+   * @param response
+   * @throws ServletException
+   * @throws IOException 
+   */
   @Override
   protected void doPost(HttpServletRequest request,  HttpServletResponse response) throws ServletException, IOException {
       

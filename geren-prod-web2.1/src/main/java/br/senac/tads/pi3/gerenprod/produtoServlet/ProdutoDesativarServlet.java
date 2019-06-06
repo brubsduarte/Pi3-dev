@@ -25,6 +25,14 @@ public class ProdutoDesativarServlet extends HttpServlet {
 
     private final CrudInterface produtoDAO = new ProdutoDAO();
 
+    /***
+     * Metodo que desativa o produto.
+     * 
+     * @param request
+     * @param response
+     * @throws ServletException
+     * @throws IOException 
+     */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 

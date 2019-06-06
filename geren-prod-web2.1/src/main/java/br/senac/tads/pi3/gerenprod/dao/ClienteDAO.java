@@ -19,6 +19,12 @@ import java.util.Date;
  */
 public class ClienteDAO implements CrudInterface<Cliente> {
 
+  /**
+   * Lista cliente. 
+   * 
+   * @param idFilial
+   * @return 
+   */
     @Override
     public ArrayList<Cliente> listar(int idFilial) {
         DB db = new DB(true);
@@ -51,6 +57,12 @@ public class ClienteDAO implements CrudInterface<Cliente> {
         }
     }
     
+    /**
+     * Lista clientes que estão alugando 
+     * 
+     * @param idFilial
+     * @return 
+     */
     public ArrayList<Cliente> listarAlugando(int idFilial) {
         DB db = new DB(true);
         try {
@@ -82,6 +94,12 @@ public class ClienteDAO implements CrudInterface<Cliente> {
         }
     }
 
+    /**
+     * Lista cliente que não esta alugando. 
+     * 
+     * @param idFilial
+     * @return 
+     */
     public ArrayList<Cliente> listarNaoAlugando(int idFilial) {
         DB db = new DB(true);
         try {
@@ -113,6 +131,12 @@ public class ClienteDAO implements CrudInterface<Cliente> {
         }
     }
     
+    /**
+     * Mostra o cliente. 
+     * 
+     * @param idCliente
+     * @return 
+     */
     @Override
     public Cliente mostrar(int idCliente) {
         DB db = new DB(true);
@@ -143,6 +167,12 @@ public class ClienteDAO implements CrudInterface<Cliente> {
         }
     }
 
+    /**
+     * Edita dados cadastrados do cliente. 
+     * 
+     * @param c
+     * @return 
+     */
     @Override
     public boolean editar(Cliente c) {
         DB db = new DB(false);
@@ -180,7 +210,13 @@ public class ClienteDAO implements CrudInterface<Cliente> {
             return false;
         }
     }
-
+    
+/**
+ * Salva o cliente. 
+ * 
+ * @param c
+ * @return 
+ */
     @Override
     public boolean salvar(Cliente c) {
         DB db = new DB(false);
@@ -219,6 +255,11 @@ public class ClienteDAO implements CrudInterface<Cliente> {
         }
     }
 
+    /**
+     * Desativa o cliente. 
+     * @param clienteID
+     * @return 
+     */
     @Override
     public boolean desativar(int clienteID) {
         DB db = new DB(false);

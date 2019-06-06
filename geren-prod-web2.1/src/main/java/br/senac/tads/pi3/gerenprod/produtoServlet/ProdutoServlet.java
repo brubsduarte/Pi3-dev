@@ -26,6 +26,14 @@ public class ProdutoServlet extends HttpServlet {
 
   private final CrudInterface produtoDAO = new ProdutoDAO();
   
+  /***
+   * Método usado para listar todos os produtos na tela de produtos.
+   * 
+   * @param request
+   * @param response
+   * @throws ServletException
+   * @throws IOException 
+   */
   @Override
   protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
@@ -42,6 +50,14 @@ public class ProdutoServlet extends HttpServlet {
     request.getRequestDispatcher("/produto.jsp").forward(request, response);
   }
 
+  /***
+   * Método usado para salvar o produto no banco de dados.
+   * 
+   * @param request
+   * @param response
+   * @throws ServletException
+   * @throws IOException 
+   */
   @Override
   protected void doPost(HttpServletRequest request,  HttpServletResponse response) throws ServletException, IOException {
 
